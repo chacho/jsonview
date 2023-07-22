@@ -1,6 +1,6 @@
 {
   "id": "jsonview@brh.numbera.com",
-  "version": "2.3.0",
+  "version": "2.4.3",
   "name": "jsonview",
   "title": "JSONView",
   "description": "View JSON documents in the browser.",
@@ -8,10 +8,13 @@
   "author": "Benjamin Hollis",
   "repository": "https://github.com/bhollis/jsonview",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "start": "./build.sh",
-    "lint": "tslint -p tsconfig.json",
-    "watch": "npm-watch"
+    "startWindows": "Powershell.exe -File ./buildWindows.ps1",
+    "lint": "eslint src --ext .js,.ts --fix",
+    "watch": "npm-watch",
+    "rollup": "rollup"
   },
   "watch": {
     "start": {
@@ -43,7 +46,8 @@
     "Mikael Hiort af Ornäs (sv-SE)",
     "Zhouck (uk-UA)",
     "Kishu Agarwal (hi-IN)",
-    "hiyaku0317 (ko)"
+    "hiyaku0317 (ko)",
+    "Nur Muhlis (id)"
   ],
   "locales": {
     "bg-BG": {
@@ -72,6 +76,9 @@
     },
     "hu-HU": {
       "description": "JSON dokumentumok megtekintése a böngészőben."
+    },
+    "id": {
+      "description": "Lihat dokumen JSON di browser."
     },
     "it": {
       "description": "Permette di visualizzare i file JSON nel browser."
@@ -108,12 +115,18 @@
     }
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.127",
-    "npm-watch": "^0.7.0",
-    "rollup": "^2.36.0",
-    "tslint": "^6.1.3",
-    "tslint-eslint-rules": "^5.1.0",
-    "typescript": "^4.1.3",
+    "@types/chrome": "^0.0.235",
+    "@types/node": "^20.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-array-func": "^3.1.8",
+    "eslint-plugin-github": "^4.7.0",
+    "eslint-plugin-radar": "^0.2.1",
+    "npm-watch": "^0.11.0",
+    "rollup": "^3.21.3",
+    "typescript": "^5.0.4",
     "web-ext-types": "^3.2.1"
   }
 }
